@@ -1,0 +1,21 @@
+== AWS IAM Delete Policy
+    This handler is used to delete a specified managed policy.
+
+=== Parameters
+    [Policy ARN]
+        The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS
+        resources.
+
+=== Results
+    This handler returns no results
+
+==== Sample Configuration
+    Policy ARN:      arn:aws:iam::223157194001:policy/dev_ops_policy-201698281225
+
+=== Detailed Description
+  This handler is used to delete a specified managed policy.  Before you
+  can delete a managed policy, you must detach the policy from all users,
+  groups, and roles that it is attached to, and you must delete all of the
+  policy's versions. The entire ARN, not just the number or name is taken
+  as a parameter input. For more information see the AWS Amazon Virtual
+  Private Cloud User Guide online.

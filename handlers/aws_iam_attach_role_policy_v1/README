@@ -1,0 +1,24 @@
+== AWS IAM Attach Role Policy
+    This handler is used to attach a specified managed policy to a specified
+    role in AWS IAM (Identify and Access Management)
+
+=== Parameters
+    [Role Name]
+        The friendly name (not ARN) of the role to which the policy will be
+        attached. No spaces allowed, alphanumeric characters and any of these
+        '+=,.@_-' only. Must match an existing value in AWS.
+    [Policy ARN]
+        The Amazon Resource Name (ARN).  ARNs are unique identifiers for AWS
+        resources. Must match an existing value in AWS.
+
+=== Results
+    This handler returns no results
+
+==== Sample Configuration
+    Role Name:                      Dev_Role
+    Policy ARN:                     arn:aws:iam::2231572241111:policy/DEV_policy
+
+=== Detailed Description
+    This handler uses the AWS REST API to attach a policy to a role in the
+    AWS IAM service.  For more information see the AWS Amazon Virtual Private
+    Cloud User Guide online.

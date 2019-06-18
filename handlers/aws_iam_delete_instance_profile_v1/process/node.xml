@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="aws_iam_delete_instance_profile" name="AWS IAM Delete Instance Profile" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Deletes a specified instance profile. The instance profile must not have an associated role.</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="instance_profile_name" label="Instance Profile Name" required="true"
+            tooltip="The name of the instance profile to delete. No spaces allowed, alphanumeric characters and any of these '+=,.@_-' only. Must match an existing value in AWS."/>
+    </parameters>
+    <handler name="aws_iam_delete_instance_profile" version="1">
+        <infos>
+          <info name="access_key">&lt;%= @info['access_key'] %&gt;</info>
+          <info name="secret_key">&lt;%= @info['secret_key'] %&gt;</info>
+          <info name="region">&lt;%= @info['region'] %&gt;</info>
+          <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='instance_profile_name'>&lt;%= @parameters['instance_profile_name'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+    </results>
+</taskDefinition>

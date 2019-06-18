@@ -1,0 +1,24 @@
+== AWS IAM List Instance Profiles
+    This handler is used to list the instance profiles that have the specified
+    path prefix. If there are none, the action returns an empty list.
+
+=== Parameters
+    [Path Prefix]
+        The path prefix for filtering the results. For example, the prefix
+        /application_abc/component_xyz/ gets all instance profiles whose path
+        starts with /application_abc/component_xyz/. Use a slash (/) to list all
+        instances.
+
+=== Results
+    [Instance Profiles XML]
+      This handler returns a list of instance profiles from your specified
+      path prefix.
+
+==== Sample Configuration
+    Path Prefix:               /application_abc/component_xyz/
+
+=== Detailed Description
+    This handler uses the AWS REST API to list the instance profiles that have
+    the specified path prefix. If there are none, the action returns an empty
+    list.  For more information see the AWS Amazon Virtual Private Cloud
+    User Guide online.

@@ -1,0 +1,21 @@
+== AWS IAM Detach Role Policy
+    This handler is used to Remove the specified managed policy from a specified
+    role.
+
+=== Parameters
+    [Role Name]
+        The name (friendly name, not ARN) of the role to detach the policy from.
+    [Policy ARN]
+        The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.
+
+=== Results
+    This handler returns no results
+
+==== Sample Configuration
+    Role Name:                    NAT_Role
+    Policy ARN:                   arn:aws:iam::452047358935:policy/NAT_Policy
+
+=== Detailed Description
+    This handler uses the AWS REST API to detach a specified policy from a role
+    in the AWS IAM service.  For more information see the AWS Amazon Virtual
+    Private Cloud User Guide online.

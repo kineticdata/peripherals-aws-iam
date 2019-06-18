@@ -1,0 +1,21 @@
+== AWS IAM Delete Role
+    This handler is used to delete a specified role. The role must not have any
+    policies attached.
+
+=== Parameters
+    [Role Name]
+      The name of the role to delete.
+
+=== Results
+    This handler returns no results
+
+==== Sample Configuration
+    Role Name:                      Dev_Ops_role
+
+=== Detailed Description
+    This handler uses the AWS REST API to delete a specified role.  The role
+    must not have any policies attached.  Make sure you do not have any Amazon EC2
+    instances running with the role you are about to delete. Deleting a role or
+    instance profile that is associated with a running instance will break any
+    applications running on the instance.  For more information see the AWS
+    Amazon Virtual Private Cloud User Guide online.

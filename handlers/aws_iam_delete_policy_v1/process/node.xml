@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="aws_iam_delete_policy" name="AWS IAM Delete Policy" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Deletes the specified managed policy.</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="policy_arn" label="Policy ARN" required="true"
+            tooltip="The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources."/>
+    </parameters>
+    <handler name="aws_iam_delete_policy" version="1">
+        <infos>
+          <info name="access_key">&lt;%= @info['access_key'] %&gt;</info>
+          <info name="secret_key">&lt;%= @info['secret_key'] %&gt;</info>
+          <info name="region">&lt;%= @info['region'] %&gt;</info>
+          <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='policy_arn'>&lt;%= @parameters['policy_arn'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+    </results>
+</taskDefinition>

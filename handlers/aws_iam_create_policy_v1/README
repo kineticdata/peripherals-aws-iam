@@ -1,0 +1,51 @@
+== AWS IAM Create Policy
+    This handler is used to creates an AWS IAM (Identify and Access Management)
+    Policy.
+
+=== Parameters
+    [Policy Name]
+        The name of the policy document. No spaces allowed, alphanumeric
+        characters and any of these '+=,.@_-' only.
+    [Path]
+        The path for the policy (for more information see AWS IAM documentation
+        on IAM Identifiers.  If not included it defaults to a slash (/).
+    [Policy Document]
+        The policy document.
+    [Description]
+        A friendly description of the policy. Typically used to store
+        information about the permissions defined in the policy ('Grants access
+        to production DynamoDB tables'). Cannot be changed after a value is
+        assigned.
+
+=== Results
+    [Policy Name]
+      Policy name of the policy you just created.
+    [Policy ID]
+      ID of the policy you just made.
+    [Policy ARN]
+      ARN of the policy you just created.
+    [Policy Path]
+      Policy path for the policy that you just created.
+    [Policy Default Version ID]
+      Version ID created for policy.
+    [Policy Attachment Count]
+      Count of attachments to policy.
+    [Policy Is Attachable]
+      Boolean value for whether or not the policy will accept attachments.
+    [Policy Description]
+      Description of the policy created.
+    [Policy Create Date]
+      Date you created the policy.
+    [Policy Update Date]
+      Date policy was last updated.
+
+== Sample Configuration
+    Policy Name:          Dev_Policy
+    Path:                 /directory
+    Policy Document:      iam_policy
+    Description:          This a a sample description for an IAM policy.
+
+=== Detailed Description
+    This handler uses the AWS REST API to creates an AWS IAM (Identify and
+    Access Management) Policy.  For more information see the AWS Amazon Virtual
+    Private Cloud User Guide online.

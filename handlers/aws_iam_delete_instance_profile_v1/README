@@ -1,0 +1,23 @@
+== AWS IAM Delete Instance Profile
+    Deletes a specified instance profile.
+
+=== Parameters
+    [Instance Profile Name]
+      The name of the instance profile to delete. No spaces allowed,
+      alphanumeric characters and any of these '+=,.@_-' only. Must match an
+      existing value in AWS.
+
+=== Results
+    This handler returns no results
+
+==== Sample Configuration
+    Instance Profile Name:          DevOps_Instance_One
+
+=== Detailed Description
+    This handler uses the AWS REST API to deletes a specified instance profile.
+    The instance profile must not have an associated role. Make sure you do not
+    have any Amazon EC2 instance running with this instance profile you are
+    about to delete. Deleting a role or instance profile that is associated with
+    a running instance will break any applications running on that instance.
+    For more information see the AWS Amazon Virtual Private Cloud User Guide
+    online.

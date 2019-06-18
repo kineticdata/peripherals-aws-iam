@@ -1,0 +1,23 @@
+== AWS IAM Add Role to Instance Profile
+    This handler is used to add a specified role to a specified instance
+    profile.
+
+=== Parameters
+    [Instance Profile Name]
+        The name of the instance profile to add. Must match an existing value
+        in AWS.
+    [Role Name]
+        The name of the role to add. Must match an existing value in AWS.
+
+=== Results
+  This handler returns no results
+
+==== Sample Configuration
+Instance Profile Name:        Webserver
+Role Name:                    S3Access
+
+
+=== Detailed Description
+    This handler uses the AWS REST API to add a specified role to a specified
+    instance profile.  For more information see the AWS Amazon Virtual Private
+    Cloud User Guide online.

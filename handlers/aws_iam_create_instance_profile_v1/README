@@ -1,0 +1,35 @@
+== AWS IAM Create Instance Profile
+    This handler is used to create a new instance profile.
+
+=== Parameters
+    [Instance Profile Name]
+        The name of the instance profile to create. No spaces allowed,
+        alphanumeric characters and any of these '+=,.@_-' only.
+    [Path]
+        The path to the instance profile (for more information see AWS IAM
+        documentation on IAM Identifiers.  If left blank it defaults to a slash
+        (/).
+
+=== Results
+    [Instance Profile Name]
+        Name of instance profile.
+    [Instance Profile ID]
+        ID of instance profile.
+    [Instance Profile ARN]
+        ARN of instance profile.
+    [Instance Profile Path]
+        Path of instance profile.
+    [Instance Profile Roles]
+        Roles of instance profile.
+    [Instance Profile Create Date]
+        Create date of instance profile.
+
+==== Sample Configuration
+    Instance Profile Name:          Dev_Instance_Profile_One
+    Path:                           /path
+
+=== Detailed Description
+    This handler uses the AWS REST API to create a new instance
+    profile. An instance profile is a container for an AWS IAM
+    (Identify and Access Management) role that you can use to pass role
+    information to an EC2 instance when the instance starts.

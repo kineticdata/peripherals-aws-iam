@@ -1,0 +1,26 @@
+== AWS IAM Remove Role from Instance Profile
+    This handler removes a specified role from a specified instance profile.
+
+=== Parameters
+  [Instance Profile Name]
+    The name of the role to update. No spaces allowed, alphanumeric characters
+    and any of these '+=,.@_-' only. Must match an existing value in AWS.
+  [Role Name]
+    The role you wish to remove. No spaces allowed, alphanumeric characters and
+    any of these '+=,.@_-' only. Must match an existing value in AWS.
+
+=== Results
+    This handler returns no results
+
+==== Sample Configuration
+    Instance Profile Name:          DevProfileName
+    Role Name:                      DevTestRole
+
+=== Detailed Description
+    This handler uses the AWS REST API to remove a specified role from a
+    specified instance profile. Make sure you do not have any Amazon EC2
+    instances running with the role you are about to remove from the instance
+    profile. Removing a role from an instance profile that is associated with a
+    running instance will break any applications running on the instance.
+    For more information see the AWS Amazon Virtual Private Cloud User Guide
+    online.

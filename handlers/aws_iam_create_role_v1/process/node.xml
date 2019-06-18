@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="aws_iam_create_role" name="AWS IAM Create Role" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Creates an AWS IAM (Identify and Access Management) Role</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="role_name" label="Role Name" required="true"
+            tooltip="The name of the role to create. No spaces allowed, alphanumeric characters and any of these '+=,.@_-' only."/>
+        <parameter id="path" label="Path" required="false"
+            tooltip="The path for the policy (for more information see AWS IAM documentation on IAM Identifiers. If not included it defaults to a slash (/)." />
+        <parameter id="assume_role_policy_document" label="Assume Role Policy Document" required="true"
+            tooltip="The policy document."/>
+    </parameters>
+    <handler name="aws_iam_create_role" version="1">
+        <infos>
+            <info name="access_key">&lt;%= @info['access_key'] %&gt;</info>
+            <info name="secret_key">&lt;%= @info['secret_key'] %&gt;</info>
+            <info name="region">&lt;%= @info['region'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='role_name'>&lt;%= @parameters['role_name'] %&gt;</parameter>
+            <parameter name='path'>&lt;%= @parameters['path'] %&gt;</parameter>
+            <parameter name='assume_role_policy_document'>&lt;%= @parameters['assume_role_policy_document'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Role Name"/>
+        <result name="Role Id"/>
+        <result name="Role ARN"/>
+        <result name="Role Path"/>
+        <result name="Role Create Date"/>
+        <result name="Role Assume Role Policy Document"/>
+    </results>
+</taskDefinition>

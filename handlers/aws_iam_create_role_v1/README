@@ -1,0 +1,38 @@
+== AWS IAM Create Role
+    This handler is used to create an AWS IAM (Identify and Access Management)
+    Role.
+
+=== Parameters
+    [Role Name]
+        The name of the role to create. No spaces allowed, alphanumeric
+        characters and any of these '+=,.@_-' only.
+    [Path]
+        The path for the policy (for more information see AWS IAM documentation
+        on IAM Identifiers. If not included it defaults to a slash (/).
+    [Assume Role Policy Document]
+        The policy document.
+
+=== Results
+    [Role Name]
+      The name of the role created.
+    [Role Id]
+      The ID of the role created.
+    [Role Arn]
+      The ARN of the role created.
+    [Role Path]
+      The path of the role created.
+    [Role Create Date]
+      The create date of the role created.
+    [Role Assume Role Policy Document]
+      The role assume role policy document of the role created.
+
+=== Sample Configuration
+    Role Name:                        Dev_Role
+    Path:                             /desired/path
+    Assume Role Policy Document:      JSON
+
+
+=== Detailed Description
+    This handler uses the AWS REST API to create an AWS IAM (Identify and
+    Access Management) Role.  For more information see the AWS Amazon Virtual
+    Private Cloud User Guide online.

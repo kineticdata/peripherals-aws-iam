@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="aws_iam_attach_role_policy" name="AWS IAM Attach Role Policy" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Attaches a specified managed policy to a specified role in AWS IAM (Identify and Access Management)</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="role_name" label="Role Name" required="true"
+            tooltip="The friendly name (not ARN) of the role to which the policy will be attached. No spaces allowed, alphanumeric characters and any of these '+=,.@_-' only. Must match an existing value in AWS."/>
+        <parameter id="policy_arn" label="Policy ARN" required="true"
+            tooltip="The Amazon Resource Name (ARN).  ARNs are unique identifiers for AWS resources. Must match an existing value in AWS." />
+    </parameters>
+    <handler name="aws_iam_attach_role_policy" version="1">
+        <infos>
+            <info name="access_key">&lt;%= @info['access_key'] %&gt;</info>
+            <info name="secret_key">&lt;%= @info['secret_key'] %&gt;</info>
+            <info name="region">&lt;%= @info['region'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='role_name'>&lt;%= @parameters['role_name'] %&gt;</parameter>
+            <parameter name='policy_arn'>&lt;%= @parameters['policy_arn'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+    </results>
+</taskDefinition>

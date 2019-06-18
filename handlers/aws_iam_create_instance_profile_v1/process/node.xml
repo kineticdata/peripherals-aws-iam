@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="aws_iam_create_instance_profile" name="AWS IAM Create Instance Profile" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Creates a new instance profile. An instance profile is a container for an AWS IAM (Identify and Access Management) role that you can use to pass role information to an EC2 instance when the instance starts.</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="instance_profile_name" label="Instance Profile Name" required="true"
+            tooltip="The name of the instance profile to create. No spaces allowed, alphanumeric characters and any of these '+=,.@_-' only."/>
+        <parameter id="path" label="Path" required="false"
+            tooltip="The path to the instance profile (for more information see AWS IAM documentation on IAM Identifiers.  If left blank it defaults to a slash (/)." />
+    </parameters>
+    <handler name="aws_iam_create_instance_profile" version="1">
+        <infos>
+            <info name="access_key">&lt;%= @info['access_key'] %&gt;</info>
+            <info name="secret_key">&lt;%= @info['secret_key'] %&gt;</info>
+            <info name="region">&lt;%= @info['region'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='instance_profile_name'>&lt;%= @parameters['instance_profile_name'] %&gt;</parameter>
+            <parameter name='path'>&lt;%= @parameters['path'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Instance Profile Name"/>
+        <result name="Instance Profile ID"/>
+        <result name="Instance Profile ARN"/>
+        <result name="Instance Profile Path"/>
+        <result name="Instance Profile Roles"/>
+        <result name="Instance Profile Create Date"/>
+    </results>
+</taskDefinition>

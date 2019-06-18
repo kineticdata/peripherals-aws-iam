@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="aws_iam_list_instance_profiles" name="AWS IAM List Instance Profiles" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Lists the instance profiles that have the specified path prefix. If there are none, the action returns an empty list.</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="path_prefix" label="Path Prefix" required="true"
+            tooltip="The path prefix for filtering the results. For example, the prefix /application_abc/component_xyz/ gets all instance profiles whose path starts with /application_abc/component_xyz/. Use a slash (/) to list all instances.">/</parameter>
+    </parameters>
+    <handler name="aws_iam_list_instance_profiles" version="1">
+        <infos>
+            <info name="access_key">&lt;%= @info['access_key'] %&gt;</info>
+            <info name="secret_key">&lt;%= @info['secret_key'] %&gt;</info>
+            <info name="region">&lt;%= @info['region'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='path_prefix'>&lt;%= @parameters['path_prefix'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Instance Profiles XML"/>
+    </results>
+</taskDefinition>

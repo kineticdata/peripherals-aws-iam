@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taskDefinition id="aws_iam_create_policy" name="AWS IAM Create Policy" schema_version="1.0" version="1">
+    <author>support@kineticdata.com</author>
+    <description>Creates an AWS IAM (Identify and Access Management) Policy</description>
+    <helpurl></helpurl>
+    <visible>true</visible>
+    <deferrable>false</deferrable>
+    <parameters>
+        <parameter id="policy_name" label="Policy Name" required="true"
+            tooltip="The name of the policy document."/>
+        <parameter id="path" label="Path" required="false"
+            tooltip="The path for the policy." />
+        <parameter id="policy_document" label="Policy Document" required="true"
+            tooltip="The policy document."/>
+        <parameter id="description" label="Description" required="false"
+            tooltip="A friendly description of the policy."/>
+    </parameters>
+    <handler name="aws_iam_create_policy" version="1">
+        <infos>
+            <info name="access_key">&lt;%= @info['access_key'] %&gt;</info>
+            <info name="secret_key">&lt;%= @info['secret_key'] %&gt;</info>
+            <info name="region">&lt;%= @info['region'] %&gt;</info>
+            <info name="enable_debug_logging">&lt;%= @info['enable_debug_logging'] %&gt;</info>
+        </infos>
+        <parameters>
+            <parameter name='policy_name'>&lt;%= @parameters['policy_name'] %&gt;</parameter>
+            <parameter name='path'>&lt;%= @parameters['path'] %&gt;</parameter>
+            <parameter name='policy_document'>&lt;%= @parameters['policy_document'] %&gt;</parameter>
+            <parameter name='description'>&lt;%= @parameters['description'] %&gt;</parameter>
+        </parameters>
+    </handler>
+    <results format="xml">
+        <result name="Policy Name"/>
+        <result name="Policy ID"/>
+        <result name="Policy ARN"/>
+        <result name="Policy Path"/>
+        <result name="Policy Default Version ID"/>
+        <result name="Policy Attachment Count"/>
+        <result name="Policy Is Attachable"/>
+        <result name="Policy Description"/>
+        <result name="Policy Create Date"/>
+        <result name="Policy Update Date"/>
+    </results>
+</taskDefinition>

@@ -1,10 +1,11 @@
 ---
 repo-name: peripherals-aws-iam
 categories:
-- Cloud
-- DevOps
+  - Cloud
+  - DevOps
 display-name: Amazon IAM
-manufacture: Amazon
+manufacturer: Amazon
 product: IAM
-description: AWS Identity and Access Management (IAM) enables you to securely control
+description:
+  AWS Identity and Access Management (IAM) enables you to securely control
   access to AWS services and resources for your users.
